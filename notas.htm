@@ -1,0 +1,960 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-15" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Controle Acadêmico Online</title>
+    <link
+      type="image/x-icon"
+      href="https://pre.ufcg.edu.br:8443/ControleAcademicoOnline/imagens/favicon.ico"
+      rel="shortcut icon"
+    />
+    <link type="text/css" href="./notas_files/estilos.css" rel="stylesheet" />
+    <script async="" src="//www.google-analytics.com/analytics.js"></script>
+    <script async="" src="./notas_files/analytics.js"></script>
+    <script src="./notas_files/jquery.min.js"></script>
+    <link rel="stylesheet" href="./notas_files/jquery-ui.min.css" />
+    <script src="./notas_files/jquery-ui.min.js"></script>
+    <script
+      type="text/javascript"
+      src="./notas_files/datepicker-pt-BR.js"
+    ></script>
+    <link rel="stylesheet" href="./notas_files/bootstrap.min.css" />
+    <link rel="stylesheet" href="./notas_files/bootstrap-theme.min.css" />
+    <script src="./notas_files/bootstrap.min.js"></script>
+    <script type="text/javascript" src="./notas_files/funcoes.js"></script>
+  </head>
+  <body id="corpo">
+    <div
+      class="container panel panel-primary text-center"
+      id="header"
+      role="banner"
+    >
+      <div class="row">
+        <div class="col-sm-2 col-xs-3">
+          <a href="https://pre.ufcg.edu.br:8443/ControleAcademicoOnline/"
+            ><img
+              src="./notas_files/brasao.ufcg.png"
+              alt="Universidade Federal de Campina Grande"
+          /></a>
+        </div>
+        <div class="col-sm-8 col-xs-8">
+          <h1>
+            <a href="https://pre.ufcg.edu.br:8443/ControleAcademicoOnline/"
+              >Controle Acadêmico Online</a
+            >
+          </h1>
+        </div>
+        <div class="col-sm-2 col-xs-1 hidden-xs hidden-print">
+          <a href="https://pre.ufcg.edu.br:8443/ControleAcademicoOnline/"
+            ><img src="./notas_files/livros.png" alt="Atividades Acadêmicas"
+          /></a>
+        </div>
+      </div>
+    </div>
+    <!-- <div id="faixaAviso"></div> -->
+    <div
+      class="container panel panel-primary hidden-print"
+      id="menu"
+      role="navigation"
+    >
+      <ul class="nav nav-pills">
+        <li><a href="frequencia.htm">Registro de Frequência</a></li>
+        <li><a href="notas.htm">Registro de Notas</a></li>
+        <li><a href="ofertadas.htm">Turmas Ofertadas</a></li>
+        <li class="selector">
+          <form
+            action="https://pre.ufcg.edu.br:8443/ControleAcademicoOnline/Controlador"
+            method="post"
+          >
+            <input type="hidden" name="command" value="PeriodoSelecionar" />
+            <span
+              >Período:
+              <select
+                name="selectPeriodo"
+                onchange="javascript:this.form.submit();"
+              >
+                <option value="2020.2">2020.2</option>
+                <option value="2020.1">2020.1</option>
+                <option value="2020.0">2020.0</option>
+                <option value="2019.2" selected="selected">2019.2</option>
+                <option value="2019.1">2019.1</option>
+                <option value="2019.0">2019.0</option>
+                <option value="2018.2">2018.2</option>
+                <option value="2018.1">2018.1</option>
+                <option value="2018.0">2018.0</option>
+                <option value="2017.2">2017.2</option>
+                <option value="2017.1">2017.1</option>
+                <option value="2017.0">2017.0</option>
+                <option value="2016.2">2016.2</option>
+                <option value="2016.1">2016.1</option>
+                <option value="2016.0">2016.0</option>
+                <option value="2015.2">2015.2</option>
+                <option value="2015.1">2015.1</option>
+                <option value="2015.0">2015.0</option>
+                <option value="2014.2">2014.2</option>
+                <option value="2014.1">2014.1</option>
+                <option value="2014.0">2014.0</option>
+                <option value="2013.2">2013.2</option>
+                <option value="2013.1">2013.1</option>
+                <option value="2013.0">2013.0</option>
+                <option value="2012.2">2012.2</option>
+                <option value="2012.1">2012.1</option>
+                <option value="2012.0">2012.0</option>
+                <option value="2011.2">2011.2</option>
+                <option value="2011.1">2011.1</option>
+                <option value="2011.0">2011.0</option>
+                <option value="2010.2">2010.2</option>
+                <option value="2010.1">2010.1</option>
+                <option value="2010.0">2010.0</option>
+                <option value="2009.2">2009.2</option>
+                <option value="2009.1">2009.1</option>
+                <option value="2009.0">2009.0</option>
+                <option value="2008.2">2008.2</option>
+                <option value="2008.1">2008.1</option>
+                <option value="2008.0">2008.0</option>
+                <option value="2007.2">2007.2</option>
+                <option value="2007.1">2007.1</option>
+                <option value="2007.0">2007.0</option>
+                <option value="2006.2">2006.2</option>
+                <option value="2006.1">2006.1</option>
+                <option value="2006.0">2006.0</option>
+                <option value="2005.2">2005.2</option>
+                <option value="2005.1">2005.1</option>
+                <option value="2005.0">2005.0</option>
+                <option value="2004.2">2004.2</option>
+                <option value="2004.1">2004.1</option>
+                <option value="2004.0">2004.0</option>
+                <option value="2003.2">2003.2</option>
+                <option value="2003.1">2003.1</option>
+                <option value="2003.0">2003.0</option>
+                <option value="2002.2">2002.2</option>
+                <option value="2002.1">2002.1</option>
+                <option value="2002.0">2002.0</option>
+              </select></span
+            >
+          </form>
+        </li>
+      </ul>
+    </div>
+    <div class="container panel panel-primary" id="conteudo" role="main">
+      <script type="text/javascript">
+        //<![CDATA[
+        sessionKeeper('input[type=text], select', 9.5)
+        function alteraNumNotas(numNotas) {
+          window.location.href =
+            'Controlador?command=ProfessorTurmaNotasEditar&codigo=malandro&turma=01&notas=' +
+            numNotas
+        }
+        $(document).ready(function() {
+          // ativa a navegação usando as setas
+          ativaNavegacao('input[id^="n"], input[id^="f"]', true, false)
+          // ativa a autocompletação de "," nas notas
+          ativaCompletaVirgula('input[id^="n"], input[id^="f"]')
+        })
+        //]]>
+      </script>
+      <h2>
+        Registro de notas
+        <button
+          class="btn btn-info btn-xs hidden-print"
+          title="Exibir ajuda"
+          id="helpIcon"
+        >
+          <span class="glyphicon glyphicon-question-sign"></span
+          ><span class="sr-only">Exibir ajuda</span></button
+        ><script type="text/javascript">
+          bindHelpTrigger('helpIcon', 'professorTurmaNotasEditar', false)
+        </script>
+      </h2>
+      <div class="row">
+        <div class="col-sm-2 col-xs-3 text-right"><b>Disciplina:</b></div>
+        <div class="col-sm-10 col-xs-9">11012345 - BANDA MAGNÍFICOS I</div>
+      </div>
+      <div class="row">
+        <div class="col-sm-2 col-xs-3 text-right"><b>Turma:</b></div>
+        <div class="col-sm-2 col-xs-3">01</div>
+        <div class="col-sm-2 col-xs-3 text-right"><b>Período:</b></div>
+        <div class="col-sm-2 col-xs-3">2019.2</div>
+      </div>
+      <form
+        class="form-horizontal"
+        action="https://pre.ufcg.edu.br:8443/ControleAcademicoOnline/Controlador"
+        method="post"
+        role="form"
+      >
+        <input
+          type="hidden"
+          name="command"
+          value="ProfessorTurmaNotasConfirmar"
+        />
+        <input type="hidden" name="codigo" value="11012345" />
+        <input type="hidden" name="turma" value="01" />
+        <input type="hidden" name="notas" value="3" />
+        <div class="form-group">
+          <label class="col-sm-2 control-label" for="numNotas"
+            >Núm. notas:</label
+          >
+          <div class="col-sm-1">
+            <select
+              class="form-control input-sm"
+              id="numNotas"
+              name="numNotas"
+              onchange="alteraNumNotas(this.value)"
+            >
+              <option value="3" selected=""> 3</option>
+              <option value="4"> 4</option>
+              <option value="5"> 5</option>
+              <option value="6"> 6</option>
+              <option value="7"> 7</option>
+              <option value="8"> 8</option>
+              <option value="9"> 9</option>
+            </select>
+          </div>
+        </div>
+        <div class="table-responsive">
+          <table class="table table-hover table-condensed">
+            <thead>
+              <tr>
+                <th><span class="sr-only">Ordem</span></th>
+                <th class="text-center">Matrícula</th>
+                <th>Nome</th>
+                <th class="text-center">
+                  Nota 1<input
+                    class="form-control input-sm"
+                    type="text"
+                    title=""
+                    name="peso1"
+                    value="1"
+                    maxlength="2"
+                    data-original-title="Peso"
+                    aria-describedby="tooltip953382"
+                  />
+                </th>
+                <th class="text-center">
+                  Nota 2<input
+                    class="form-control input-sm"
+                    type="text"
+                    title=""
+                    name="peso2"
+                    value="1"
+                    maxlength="2"
+                    data-original-title="Peso"
+                  />
+                </th>
+                <th class="text-center">
+                  Nota 3<input
+                    class="form-control input-sm"
+                    type="text"
+                    title=""
+                    name="peso3"
+                    value="1"
+                    maxlength="2"
+                    data-original-title="Peso"
+                    aria-describedby="tooltip21394"
+                  />
+                </th>
+                <th class="text-center" title="Média parcial">M. parc.</th>
+                <th class="text-center" title="Nota do exame final">
+                  E. final
+                </th>
+                <th class="text-center" title="Média final">M. final</th>
+                <th title="Observação">Obs.</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="text-center">1</td>
+                <td class="text-center">119427359</td>
+                <td class="text-nowrap">ALCEU VALENÇA</td>
+                <td class="text-center">
+                  <input
+                    class="form-control"
+                    type="text"
+                    name="n1_119427359"
+                    id="n1_1"
+                    maxlength="4"
+                    value="8,3"
+                  />
+                </td>
+                <td class="text-center">
+                  <input
+                    class="form-control"
+                    type="text"
+                    name="n2_119427359"
+                    id="n2_1"
+                    maxlength="4"
+                    value=""
+                  />
+                </td>
+                <td class="text-center">
+                  <input
+                    class="form-control"
+                    type="text"
+                    name="n3_119427359"
+                    id="n3_1"
+                    maxlength="4"
+                    value=""
+                  />
+                </td>
+                <td class="text-center">
+                  <span title="" class="text-danger">2,8</span>
+                </td>
+                <td class="text-center">
+                  <input
+                    class="form-control"
+                    type="text"
+                    name="f_119427359"
+                    maxlength="4"
+                    id="f_1"
+                    value=""
+                  />
+                </td>
+                <td class="text-center">
+                  <p class="form-control-static">
+                    <span title="" class="text-danger">2,8</span>
+                  </p>
+                </td>
+                <td class="text-center"></td>
+              </tr>
+              <tr>
+                <td class="text-center">2</td>
+                <td class="text-center">118915587</td>
+                <td class="text-nowrap">ANTONIO BELCHIOR</td>
+                <td class="text-center">
+                  <input
+                    class="form-control"
+                    type="text"
+                    name="n1_118915587"
+                    id="n1_2"
+                    maxlength="4"
+                    value="7,7"
+                  />
+                </td>
+                <td class="text-center">
+                  <input
+                    class="form-control"
+                    type="text"
+                    name="n2_118915587"
+                    id="n2_2"
+                    maxlength="4"
+                    value=""
+                  />
+                </td>
+                <td class="text-center">
+                  <input
+                    class="form-control"
+                    type="text"
+                    name="n3_118915587"
+                    id="n3_2"
+                    maxlength="4"
+                    value=""
+                  />
+                </td>
+                <td class="text-center">
+                  <span title="" class="text-danger">2,6</span>
+                </td>
+                <td class="text-center">
+                  <input
+                    class="form-control"
+                    type="text"
+                    name="f_118915587"
+                    maxlength="4"
+                    id="f_2"
+                    value=""
+                  />
+                </td>
+                <td class="text-center">
+                  <p class="form-control-static">
+                    <span title="" class="text-danger">2,6</span>
+                  </p>
+                </td>
+                <td class="text-center"></td>
+              </tr>
+              <tr>
+                <td class="text-center">3</td>
+                <td class="text-center">118816743</td>
+                <td class="text-nowrap">DOMINGUINHOS</td>
+                <td class="text-center">
+                  <input
+                    class="form-control"
+                    type="text"
+                    name="n1_118816743"
+                    id="n1_3"
+                    maxlength="4"
+                    value="9,5"
+                  />
+                </td>
+                <td class="text-center">
+                  <input
+                    class="form-control"
+                    type="text"
+                    name="n2_118816743"
+                    id="n2_3"
+                    maxlength="4"
+                    value=""
+                  />
+                </td>
+                <td class="text-center">
+                  <input
+                    class="form-control"
+                    type="text"
+                    name="n3_118816743"
+                    id="n3_3"
+                    maxlength="4"
+                    value=""
+                  />
+                </td>
+                <td class="text-center">
+                  <span title="" class="text-danger">3,2</span>
+                </td>
+                <td class="text-center">
+                  <input
+                    class="form-control"
+                    type="text"
+                    name="f_118816743"
+                    maxlength="4"
+                    id="f_3"
+                    value=""
+                  />
+                </td>
+                <td class="text-center">
+                  <p class="form-control-static">
+                    <span title="" class="text-danger">3,2</span>
+                  </p>
+                </td>
+                <td class="text-center"></td>
+              </tr>
+              <tr>
+                <td class="text-center">4</td>
+                <td class="text-center">118596403</td>
+                <td class="text-nowrap">DORGIVAL DANTAS</td>
+                <td class="text-center">
+                  <input
+                    class="form-control"
+                    type="text"
+                    name="n1_118596403"
+                    id="n1_4"
+                    maxlength="4"
+                    value="9,3"
+                  />
+                </td>
+                <td class="text-center">
+                  <input
+                    class="form-control"
+                    type="text"
+                    name="n2_118596403"
+                    id="n2_4"
+                    maxlength="4"
+                    value=""
+                  />
+                </td>
+                <td class="text-center">
+                  <input
+                    class="form-control"
+                    type="text"
+                    name="n3_118596403"
+                    id="n3_4"
+                    maxlength="4"
+                    value=""
+                  />
+                </td>
+                <td class="text-center">
+                  <span title="" class="text-danger">3,1</span>
+                </td>
+                <td class="text-center">
+                  <input
+                    class="form-control"
+                    type="text"
+                    name="f_118596403"
+                    maxlength="4"
+                    id="f_4"
+                    value=""
+                  />
+                </td>
+                <td class="text-center">
+                  <p class="form-control-static">
+                    <span title="" class="text-danger">3,1</span>
+                  </p>
+                </td>
+                <td class="text-center"></td>
+              </tr>
+              <tr>
+                <td class="text-center">5</td>
+                <td class="text-center">118790709</td>
+                <td class="text-nowrap">ELBA RAMALHO</td>
+                <td class="text-center">
+                  <input
+                    class="form-control"
+                    type="text"
+                    name="n1_118790709"
+                    id="n1_5"
+                    maxlength="4"
+                    value="7,8"
+                  />
+                </td>
+                <td class="text-center">
+                  <input
+                    class="form-control"
+                    type="text"
+                    name="n2_118790709"
+                    id="n2_5"
+                    maxlength="4"
+                    value=""
+                  />
+                </td>
+                <td class="text-center">
+                  <input
+                    class="form-control"
+                    type="text"
+                    name="n3_118790709"
+                    id="n3_5"
+                    maxlength="4"
+                    value=""
+                  />
+                </td>
+                <td class="text-center">
+                  <span title="" class="text-danger">2,6</span>
+                </td>
+                <td class="text-center">
+                  <input
+                    class="form-control"
+                    type="text"
+                    name="f_118790709"
+                    maxlength="4"
+                    id="f_5"
+                    value=""
+                  />
+                </td>
+                <td class="text-center">
+                  <p class="form-control-static">
+                    <span title="" class="text-danger">2,6</span>
+                  </p>
+                </td>
+                <td class="text-center">Rep. faltas</td>
+              </tr>
+              <tr>
+                <td class="text-center">6</td>
+                <td class="text-center">118758901</td>
+                <td class="text-nowrap">FLÁVIO JOSÉ</td>
+                <td class="text-center">
+                  <input
+                    class="form-control"
+                    type="text"
+                    name="n1_118758901"
+                    id="n1_6"
+                    maxlength="4"
+                    value="9,7"
+                  />
+                </td>
+                <td class="text-center">
+                  <input
+                    class="form-control"
+                    type="text"
+                    name="n2_118758901"
+                    id="n2_6"
+                    maxlength="4"
+                    value=""
+                  />
+                </td>
+                <td class="text-center">
+                  <input
+                    class="form-control"
+                    type="text"
+                    name="n3_118758901"
+                    id="n3_6"
+                    maxlength="4"
+                    value=""
+                  />
+                </td>
+                <td class="text-center">
+                  <span title="" class="text-danger">3,2</span>
+                </td>
+                <td class="text-center">
+                  <input
+                    class="form-control"
+                    type="text"
+                    name="f_118758901"
+                    maxlength="4"
+                    id="f_6"
+                    value=""
+                  />
+                </td>
+                <td class="text-center">
+                  <p class="form-control-static">
+                    <span title="" class="text-danger">3,2</span>
+                  </p>
+                </td>
+                <td class="text-center"></td>
+              </tr>
+              <tr>
+                <td class="text-center">7</td>
+                <td class="text-center">118653198</td>
+                <td class="text-nowrap">FRANCISCO CÉSAR</td>
+                <td class="text-center">
+                  <input
+                    class="form-control"
+                    type="text"
+                    name="n1_118653198"
+                    id="n1_7"
+                    maxlength="4"
+                    value="3,0"
+                  />
+                </td>
+                <td class="text-center">
+                  <input
+                    class="form-control"
+                    type="text"
+                    name="n2_118653198"
+                    id="n2_7"
+                    maxlength="4"
+                    value=""
+                  />
+                </td>
+                <td class="text-center">
+                  <input
+                    class="form-control"
+                    type="text"
+                    name="n3_118653198"
+                    id="n3_7"
+                    maxlength="4"
+                    value=""
+                  />
+                </td>
+                <td class="text-center">
+                  <span title="" class="text-danger">1,0</span>
+                </td>
+                <td class="text-center">
+                  <input
+                    class="form-control"
+                    type="text"
+                    name="f_118653198"
+                    maxlength="4"
+                    id="f_7"
+                    value=""
+                  />
+                </td>
+                <td class="text-center">
+                  <p class="form-control-static">
+                    <span title="" class="text-danger">1,0</span>
+                  </p>
+                </td>
+                <td class="text-center"></td>
+              </tr>
+              <tr>
+                <td class="text-center">8</td>
+                <td class="text-center">119398779</td>
+                <td class="text-nowrap">GILBERTO GIL</td>
+                <td class="text-center">
+                  <input
+                    class="form-control"
+                    type="text"
+                    name="n1_119398779"
+                    id="n1_8"
+                    maxlength="4"
+                    value="6,0"
+                  />
+                </td>
+                <td class="text-center">
+                  <input
+                    class="form-control"
+                    type="text"
+                    name="n2_119398779"
+                    id="n2_8"
+                    maxlength="4"
+                    value=""
+                  />
+                </td>
+                <td class="text-center">
+                  <input
+                    class="form-control"
+                    type="text"
+                    name="n3_119398779"
+                    id="n3_8"
+                    maxlength="4"
+                    value=""
+                  />
+                </td>
+                <td class="text-center">
+                  <span title="" class="text-danger">2,0</span>
+                </td>
+                <td class="text-center">
+                  <input
+                    class="form-control"
+                    type="text"
+                    name="f_119398779"
+                    maxlength="4"
+                    id="f_8"
+                    value=""
+                  />
+                </td>
+                <td class="text-center">
+                  <p class="form-control-static">
+                    <span title="" class="text-danger">2,0</span>
+                  </p>
+                </td>
+                <td class="text-center"></td>
+              </tr>
+              <tr>
+                <td class="text-center">9</td>
+                <td class="text-center">119131821</td>
+                <td class="text-nowrap">ILLY GOUVEIA</td>
+                <td class="text-center">
+                  <input
+                    class="form-control"
+                    type="text"
+                    name="n1_119131821"
+                    id="n1_9"
+                    maxlength="4"
+                    value="7,0"
+                  />
+                </td>
+                <td class="text-center">
+                  <input
+                    class="form-control"
+                    type="text"
+                    name="n2_119131821"
+                    id="n2_9"
+                    maxlength="4"
+                    value=""
+                  />
+                </td>
+                <td class="text-center">
+                  <input
+                    class="form-control"
+                    type="text"
+                    name="n3_119131821"
+                    id="n3_9"
+                    maxlength="4"
+                    value=""
+                  />
+                </td>
+                <td class="text-center">
+                  <span title="" class="text-danger">2,3</span>
+                </td>
+                <td class="text-center">
+                  <input
+                    class="form-control"
+                    type="text"
+                    name="f_119131821"
+                    maxlength="4"
+                    id="f_9"
+                    value=""
+                  />
+                </td>
+                <td class="text-center">
+                  <p class="form-control-static">
+                    <span title="" class="text-danger">2,3</span>
+                  </p>
+                </td>
+                <td class="text-center"></td>
+              </tr>
+              <tr>
+                <td class="text-center">10</td>
+                <td class="text-center">118808558</td>
+                <td class="text-nowrap">LUIZ GONZAGA</td>
+                <td class="text-center">
+                  <input
+                    class="form-control"
+                    type="text"
+                    name="n1_118808558"
+                    id="n1_10"
+                    maxlength="4"
+                    value="9,0"
+                  />
+                </td>
+                <td class="text-center">
+                  <input
+                    class="form-control"
+                    type="text"
+                    name="n2_118808558"
+                    id="n2_10"
+                    maxlength="4"
+                    value=""
+                  />
+                </td>
+                <td class="text-center">
+                  <input
+                    class="form-control"
+                    type="text"
+                    name="n3_118808558"
+                    id="n3_10"
+                    maxlength="4"
+                    value=""
+                  />
+                </td>
+                <td class="text-center">
+                  <span title="" class="text-danger">3,0</span>
+                </td>
+                <td class="text-center">
+                  <input
+                    class="form-control"
+                    type="text"
+                    name="f_118808558"
+                    maxlength="4"
+                    id="f_10"
+                    value=""
+                  />
+                </td>
+                <td class="text-center">
+                  <p class="form-control-static">
+                    <span title="" class="text-danger">3,0</span>
+                  </p>
+                </td>
+                <td class="text-center"></td>
+              </tr>
+              <tr>
+                <td class="text-center">11</td>
+                <td class="text-center">118851081</td>
+                <td class="text-nowrap">PINTO DE MONTEIRO</td>
+                <td class="text-center">
+                  <input
+                    class="form-control"
+                    type="text"
+                    name="n1_118851081"
+                    id="n1_11"
+                    maxlength="4"
+                    value=""
+                  />
+                </td>
+                <td class="text-center">
+                  <input
+                    class="form-control"
+                    type="text"
+                    name="n2_118851081"
+                    id="n2_11"
+                    maxlength="4"
+                    value=""
+                  />
+                </td>
+                <td class="text-center">
+                  <input
+                    class="form-control"
+                    type="text"
+                    name="n3_118851081"
+                    id="n3_11"
+                    maxlength="4"
+                    value=""
+                  />
+                </td>
+                <td class="text-center">
+                  <span title="" class="text-danger">0,0</span>
+                </td>
+                <td class="text-center">
+                  <input
+                    class="form-control"
+                    type="text"
+                    name="f_118851081"
+                    maxlength="4"
+                    id="f_11"
+                    value=""
+                  />
+                </td>
+                <td class="text-center">
+                  <p class="form-control-static">
+                    <span title="" class="text-danger">0,0</span>
+                  </p>
+                </td>
+                <td class="text-center"></td>
+              </tr>
+              <tr>
+                <td class="text-center">12</td>
+                <td class="text-center">119426765</td>
+                <td class="text-nowrap">RAIMUNDO NONATO</td>
+                <td class="text-center">
+                  <input
+                    class="form-control"
+                    type="text"
+                    name="n1_119426765"
+                    id="n1_12"
+                    maxlength="4"
+                    value="9,5"
+                  />
+                </td>
+                <td class="text-center">
+                  <input
+                    class="form-control"
+                    type="text"
+                    name="n2_119426765"
+                    id="n2_12"
+                    maxlength="4"
+                    value=""
+                  />
+                </td>
+                <td class="text-center">
+                  <input
+                    class="form-control"
+                    type="text"
+                    name="n3_119426765"
+                    id="n3_12"
+                    maxlength="4"
+                    value=""
+                  />
+                </td>
+                <td class="text-center">
+                  <span title="" class="text-danger">3,2</span>
+                </td>
+                <td class="text-center">
+                  <input
+                    class="form-control"
+                    type="text"
+                    name="f_119426765"
+                    maxlength="4"
+                    id="f_12"
+                    value=""
+                  />
+                </td>
+                <td class="text-center">
+                  <p class="form-control-static">
+                    <span title="" class="text-danger">3,2</span>
+                  </p>
+                </td>
+                <td class="text-center"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="text-center">
+          <button
+            class="btn btn-danger"
+            type="button"
+            onclick="window.location.href='Controlador?command=ProfessorTurmaNotas&amp;codigo=1107280&amp;turma=01'"
+          >
+            Cancelar
+          </button>
+          <input class="btn btn-success" type="submit" value="Confirmar" />
+        </div>
+      </form>
+    </div>
+    <div class="container well well-sm">
+      © 2019&nbsp;<a href="http://pre.ufcg.edu.br/"
+        >Pró-Reitoria de Ensino/UFCG</a
+      ><br />
+      Desenvolvido por Divisão de Informática/PRE
+    </div>
+    <!-- INICIO ANALYTICS -->
+    <script>
+      ;(function(i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r
+        ;(i[r] =
+          i[r] ||
+          function() {
+            ;(i[r].q = i[r].q || []).push(arguments)
+          }),
+          (i[r].l = 1 * new Date())
+        ;(a = s.createElement(o)), (m = s.getElementsByTagName(o)[0])
+        a.async = 1
+        a.src = g
+        m.parentNode.insertBefore(a, m)
+      })(
+        window,
+        document,
+        'script',
+        '//www.google-analytics.com/analytics.js',
+        'ga'
+      )
+      ga('create', 'UA-15935598-1', 'auto')
+      ga('send', 'pageview')
+    </script>
+    <!-- FIM ANALYTICS -->
+  </body>
+</html>
