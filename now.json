@@ -1,6 +1,11 @@
 {
-  "routes": [{
-    "src": "/",
-    "dest": "/frequencia.html"
-  }]
+  "routes": [
+    {
+      "src": "/",
+      "status": 301,
+      "headers": {
+        "Location": "frequencia.html?command=ProfessorTurmaFrequenciaEditar"
+      }
+    }
+  ]
 }
