@@ -36,25 +36,27 @@
     >
       <div class="row">
         <div class="col-sm-2 col-xs-3">
-          <a href="https://pre.ufcg.edu.br:8443/ControleAcademicoOnline/"
-            ><img
+          <a href="https://pre.ufcg.edu.br:8443/ControleAcademicoOnline/">
+            <img
               src="./frequencia_files/brasao.ufcg.png"
               alt="Universidade Federal de Campina Grande"
-          /></a>
+            />
+          </a>
         </div>
         <div class="col-sm-8 col-xs-8">
           <h1>
-            <a href="https://pre.ufcg.edu.br:8443/ControleAcademicoOnline/"
-              >Controle Acadêmico Online</a
-            >
+            <a href="https://pre.ufcg.edu.br:8443/ControleAcademicoOnline/">
+              Controle Acadêmico Online
+            </a>
           </h1>
         </div>
         <div class="col-sm-2 col-xs-1 hidden-xs hidden-print">
-          <a href="https://pre.ufcg.edu.br:8443/ControleAcademicoOnline/"
-            ><img
+          <a href="https://pre.ufcg.edu.br:8443/ControleAcademicoOnline/">
+            <img
               src="./frequencia_files/livros.png"
               alt="Atividades Acadêmicas"
-          /></a>
+            />
+          </a>
         </div>
       </div>
     </div>
@@ -65,16 +67,31 @@
       role="navigation"
     >
       <ul class="nav nav-pills">
-        <li><a href="frequencia.html?command=ProfessorTurmaFrequenciaEditar">Registro de Frequência</a></li>
-        <li><a href="notas.html?command=ProfessorTurmaNotasEditar">Registro de Notas</a></li>
+        <li>
+          <a href="frequencia.html?command=ProfessorTurmaFrequenciaEditar">
+            Registro de Frequência
+          </a>
+        </li>
+        <li>
+          <a href="notas.html?command=ProfessorTurmaNotasEditar">
+            Registro de Notas
+          </a>
+        </li>
+        <li>
+          <a
+            href="editar_registro_aulas.html?command=ProfessorTurmaAulasEditar"
+          >
+            Registro de aula
+          </a>
+        </li>
         <li class="selector">
           <form
             action="https://pre.ufcg.edu.br:8443/ControleAcademicoOnline/Controlador"
             method="post"
           >
             <input type="hidden" name="command" value="PeriodoSelecionar" />
-            <span
-              >Período:
+            <span>
+              Período:
               <select
                 name="selectPeriodo"
                 onchange="javascript:this.form.submit();"
@@ -136,8 +153,8 @@
                 <option value="2002.2">2002.2</option>
                 <option value="2002.1">2002.1</option>
                 <option value="2002.0">2002.0</option>
-              </select></span
-            >
+              </select>
+            </span>
           </form>
         </li>
       </ul>
@@ -146,11 +163,11 @@
       <script type="text/javascript">
         //<![CDATA[
         sessionKeeper('input[type=text]', 9.5)
-        $(document).ready(function() {
+        $(document).ready(function () {
           ativaNavegacao(
             '#tabelaFrequencia input[type="text"][id^="f"]',
             true,
-            true
+            true,
           )
         })
         //]]>
@@ -162,15 +179,18 @@
           title="Exibir ajuda"
           id="helpIcon"
         >
-          <span class="glyphicon glyphicon-question-sign"></span
-          ><span class="sr-only">Exibir ajuda</span></button
-        ><script type="text/javascript">
+          <span class="glyphicon glyphicon-question-sign"></span>
+          <span class="sr-only">Exibir ajuda</span>
+        </button>
+        <script type="text/javascript">
           bindHelpTrigger('helpIcon', 'professorTurmaFrequenciaEditar', false)
         </script>
       </h2>
       <div class="row">
         <div class="col-sm-2 col-xs-3 text-right"><b>Disciplina:</b></div>
-        <div class="col-sm-10 col-xs-9">11012345 - INTRODUÇÃO A BANDA MAGNÍFICOS I</div>
+        <div class="col-sm-10 col-xs-9">
+          11012345 - INTRODUÇÃO A BANDA MAGNÍFICOS I
+        </div>
       </div>
       <div class="row">
         <div class="col-sm-2 col-xs-3 text-right"><b>Turma:</b></div>
@@ -201,11 +221,13 @@
                 <th class="text-center">Matrícula</th>
                 <th>Nome</th>
                 <th class="text-center" title="2 horas-aula">
-                  21<br />
+                  21
+                  <br />
                   17/10
                 </th>
                 <th class="text-center" title="2 horas-aula">
-                  22<br />
+                  22
+                  <br />
                   22/10
                 </th>
                 <th class="text-center" title="Limite: 15">Total faltas</th>
@@ -579,18 +601,18 @@
       </form>
     </div>
     <div class="container well well-sm">
-      © 2019&nbsp;<a href="http://pre.ufcg.edu.br/"
-        >Pró-Reitoria de Ensino/UFCG</a
-      ><br />
+      © 2019&nbsp;
+      <a href="http://pre.ufcg.edu.br/">Pró-Reitoria de Ensino/UFCG</a>
+      <br />
       Desenvolvido por Divisão de Informática/PRE
     </div>
     <!-- INICIO ANALYTICS -->
     <script>
-      ;(function(i, s, o, g, r, a, m) {
+      ;(function (i, s, o, g, r, a, m) {
         i['GoogleAnalyticsObject'] = r
         ;(i[r] =
           i[r] ||
-          function() {
+          function () {
             ;(i[r].q = i[r].q || []).push(arguments)
           }),
           (i[r].l = 1 * new Date())
@@ -603,7 +625,7 @@
         document,
         'script',
         '//www.google-analytics.com/analytics.js',
-        'ga'
+        'ga',
       )
       ga('create', 'UA-15935598-1', 'auto')
       ga('send', 'pageview')
